@@ -18,6 +18,13 @@ RSpec.describe StringCalculator do
       expect(calculator.add("1,5")).to eq(6)
       expect(calculator.add("2,3")).to eq(5)
     end
+
+    it 'handles any amount of numbers' do
+      calculator = StringCalculator.new
+      expect(calculator.add("1,2,3")).to eq(6)
+      expect(calculator.add("1,2,3,4,5")).to eq(15)
+      expect(calculator.add("10,20,30,40")).to eq(100)
+    end
   end
 end
 
